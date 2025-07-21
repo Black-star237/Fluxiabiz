@@ -1,0 +1,9 @@
+1. Interface futuriste
+Ambiance moderne, épurée, avec des effets visuels avancés.
+2. Cartes flottantes
+Toutes les cartes (statistiques, actions, listes, etc.) doivent donner l’impression de « flotter » au-dessus du fond (effet d’ombre portée, élévation, marges aérées).
+3. Transparence et semi-transparence
+Certaines cartes et composants auront un fond semi-transparent (effet « glassmorphism »).
+Cela laisse entrevoir le fond d’écran, pour un effet moderne et léger.
+4. Fond d’écran flouté
+L’arrière-plan de l’application sera une image (ou un dégradé) floutée, visible à travers les éléments transparents.

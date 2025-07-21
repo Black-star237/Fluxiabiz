@@ -1,0 +1,21 @@
+{
+  "name": "Fluxiabiz ERP",
+  "short_name": "Fluxiabiz",
+  "description": "ERP mobile et moderne pour PME avec assistant IA.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#18181b",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

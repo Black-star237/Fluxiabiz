@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxiabiz - ERP Mobile</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="theme-color" content="#3B82F6">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        .!rounded-button {
+            border-radius: 8px !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans relative min-h-screen overflow-x-hidden">
+    <!-- Fond d'écran flouté -->
+    <div class="fixed inset-0 -z-10 w-full h-full bg-cover bg-center" style="background-image: url('rrr.png'); filter: blur(12px);"></div>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-white/40 backdrop-blur-md shadow-2xl border-b border-white/20 z-50 px-4 py-3">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <h1 class="text-xl font-['Pacifico'] text-primary">Fluxiabiz</h1>
+                <div class="text-sm text-gray-600">
+                    <span class="font-medium">TechnoSolutions SARL</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600 cursor-pointer">
+                    <i class="ri-building-line ri-lg"></i>
+                </button>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600 cursor-pointer relative">
+                    <i class="ri-notification-line ri-lg"></i>
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="pt-16 pb-20 px-4">
+        <!-- Dashboard Header -->
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Tableau de Bord</h2>
+            <p class="text-gray-600">Aperçu de votre activité aujourd'hui</p>
+        </div>
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Chiffre d'Affaires</p>
+                        <p class="text-xl font-bold text-gray-900">€ 24,580</p>
+                        <p class="text-xs text-green-600">+12.5% ce mois</p>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-lg">
+                        <i class="ri-money-euro-circle-line ri-lg text-green-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Commandes</p>
+                        <p class="text-xl font-bold text-gray-900">156</p>
+                        <p class="text-xs text-blue-600">+8 aujourd'hui</p>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg">
+                        <i class="ri-shopping-cart-line ri-lg text-blue-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Stock Faible</p>
+                        <p class="text-xl font-bold text-gray-900">23</p>
+                        <p class="text-xs text-orange-600">Articles à commander</p>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-lg">
+                        <i class="ri-alert-line ri-lg text-orange-600"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Clients</p>
+                        <p class="text-xl font-bold text-gray-900">1,247</p>
+                        <p class="text-xs text-purple-600">+15 ce mois</p>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-lg">
+                        <i class="ri-user-line ri-lg text-purple-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick Actions -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Actions Rapides</h3>
+            <div class="grid grid-cols-4 gap-3">
+                <button class="bg-white rounded-lg p-3 shadow-sm flex flex-col items-center space-y-2 cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Point%20of%20sale%20terminal%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=48&height=48&seq=pos1&orientation=squarish" alt="Nouvelle Vente" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-gray-700 text-center" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Nouvelle Vente</span>
+                </button>
+                <button class="bg-white rounded-lg p-3 shadow-sm flex flex-col items-center space-y-2 cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-500 rounded-lg overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Inventory%20box%20with%20products%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=48&height=48&seq=stock1&orientation=squarish" alt="Ajouter Stock" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-gray-700 text-center" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Ajouter Stock</span>
+                </button>
+                <button class="bg-white rounded-lg p-3 shadow-sm flex flex-col items-center space-y-2 cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-500 rounded-lg overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Invoice%20document%20with%20pen%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=48&height=48&seq=invoice1&orientation=squarish" alt="Créer Facture" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-gray-700 text-center" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Créer Facture</span>
+                </button>
+                <button class="bg-white rounded-lg p-3 shadow-sm flex flex-col items-center space-y-2 cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-500 rounded-lg overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Business%20report%20chart%20with%20graphs%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=48&height=48&seq=report1&orientation=squarish" alt="Voir Rapports" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-gray-700 text-center" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Voir Rapports</span>
+                </button>
+            </div>
+        </div>
+        <!-- Recent Activity -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Activité Récente</h3>
+            <div class="bg-white rounded-lg shadow-sm">
+                <div class="p-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 flex items-center justify-center bg-green-100 rounded-full">
+                            <i class="ri-check-line text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Commande #CMD-2024-0156 validée</p>
+                            <p class="text-xs text-gray-500">Client: Marie Dubois - € 245.80</p>
+                        </div>
+                        <span class="text-xs text-gray-400">Il y a 15 min</span>
+                    </div>
+                </div>
+                <div class="p-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 flex items-center justify-center bg-orange-100 rounded-full">
+                            <i class="ri-alert-line text-orange-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Stock faible: MacBook Pro 16"</p>
+                            <p class="text-xs text-gray-500">Quantité restante: 2 unités</p>
+                        </div>
+                        <span class="text-xs text-gray-400">Il y a 1h</span>
+                    </div>
+                </div>
+                <div class="p-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full">
+                            <i class="ri-user-add-line text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Nouveau client ajouté</p>
+                            <p class="text-xs text-gray-500">Pierre Martin - Entreprise TechStart</p>
+                        </div>
+                        <span class="text-xs text-gray-400">Il y a 2h</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full">
+                            <i class="ri-file-text-line text-purple-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Facture #FAC-2024-0089 générée</p>
+                            <p class="text-xs text-gray-500">Client: Sophie Laurent - € 1,250.00</p>
+                        </div>
+                        <span class="text-xs text-gray-400">Il y a 3h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sales Chart -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Évolution des Ventes</h3>
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+                <div class="w-full h-48 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20business%20sales%20chart%20dashboard%20with%20clean%20modern%20design%2C%20showing%20upward%20trending%20line%20graph%20with%20blue%20and%20purple%20gradient%20colors%2C%20minimalist%20interface%2C%20data%20visualization%2C%20analytics%20dashboard%2C%20clean%20white%20background%2C%20modern%20UI%20design%2C%20financial%20growth%20chart%2C%20business%20intelligence%20visualization&width=300&height=192&seq=chart1&orientation=landscape" alt="Graphique des ventes" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+        <!-- Top Products -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Produits les Plus Vendus</h3>
+            <div class="bg-white rounded-lg shadow-sm">
+                <div class="p-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Modern%20laptop%20computer%2C%20sleek%20design%2C%20silver%20metallic%20finish%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20high%20quality%20detailed%20rendering%2C%20centered%20composition%2C%20premium%20technology%20device%2C%20minimalist%20style&width=48&height=48&seq=laptop1&orientation=squarish" alt="MacBook Pro" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">MacBook Pro 16" M3</p>
+                            <p class="text-xs text-gray-500">45 ventes ce mois</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-900">€ 2,499</span>
+                    </div>
+                </div>
+                <div class="p-4 border-b border-gray-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%20wireless%20headphones%2C%20black%20premium%20design%2C%20modern%20audio%20equipment%2C%20clean%20white%20background%2C%20high%20quality%20product%20photography%2C%20centered%20composition%2C%20sleek%20technology%20device%2C%20minimalist%20style&width=48&height=48&seq=headphones1&orientation=squarish" alt="AirPods Pro" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">AirPods Pro 2ème Gen</p>
+                            <p class="text-xs text-gray-500">78 ventes ce mois</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-900">€ 279</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=Modern%20smartphone%2C%20sleek%20black%20design%2C%20premium%20mobile%20device%2C%20clean%20white%20background%2C%20high%20quality%20product%20photography%2C%20centered%20composition%2C%20latest%20technology%20phone%2C%20minimalist%20style&width=48&height=48&seq=phone1&orientation=squarish" alt="iPhone 15 Pro" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">iPhone 15 Pro Max</p>
+                            <p class="text-xs text-gray-500">32 ventes ce mois</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-900">€ 1,229</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- AI Chat Button -->
+    <button id="aiChatBtn" class="fixed bottom-24 right-4 w-14 h-14 bg-primary rounded-full shadow-lg flex items-center justify-center cursor-pointer !rounded-button z-40">
+        <i class="ri-robot-fill ri-xl text-white"></i>
+    </button>
+    <!-- AI Chat Modal -->
+    <div id="aiChatModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl max-h-96 flex flex-col">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-white/40 backdrop-blur-md shadow-2xl border-t border-white/20 rounded-t-2xl">
+                <h3 class="text-lg font-semibold text-gray-900">Assistant IA Fluxiabiz</h3>
+                <button id="closeChatBtn" class="w-8 h-8 flex items-center justify-center text-gray-400 cursor-pointer">
+                    <i class="ri-close-line ri-lg"></i>
+                </button>
+            </div>
+            <div class="flex-1 p-4 overflow-y-auto">
+                <div class="space-y-3">
+                    <div class="bg-gray-100 rounded-lg p-3">
+                        <p class="text-sm text-gray-700">Bonjour ! Je suis votre assistant IA. Comment puis-je vous aider aujourd'hui ?</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs cursor-pointer">Voir les ventes du jour</button>
+                        <button class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs cursor-pointer">Stock faible</button>
+                        <button class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs cursor-pointer">Top clients</button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-2">
+                    <input type="text" placeholder="Tapez votre question..." class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                    <button class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center cursor-pointer !rounded-button">
+                        <i class="ri-send-plane-fill text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 w-[95%] mx-auto mb-4 bg-white/40 backdrop-blur-md shadow-2xl border-t border-white/20 rounded-xl z-30">
+        <div class="grid grid-cols-5 h-16">
+            <button class="flex flex-col items-center justify-center space-y-1 text-primary cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-dashboard-fill ri-lg"></i>
+                </div>
+                <span class="text-xs font-medium">Tableau</span>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-archive-line ri-lg"></i>
+                </div>
+                <span class="text-xs">Stock</span>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                </div>
+                <span class="text-xs">Ventes</span>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-bar-chart-line ri-lg"></i>
+                </div>
+                <span class="text-xs">Rapports</span>
+            </button>
+            <button class="flex flex-col items-center justify-center space-y-1 text-gray-400 cursor-pointer">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-settings-line ri-lg"></i>
+                </div>
+                <span class="text-xs">Paramètres</span>
+            </button>
+        </div>
+    </nav>
+    <script id="aiChatScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const aiChatBtn = document.getElementById('aiChatBtn');
+            const aiChatModal = document.getElementById('aiChatModal');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            aiChatBtn.addEventListener('click', function() {
+                aiChatModal.classList.remove('hidden');
+            });
+            closeChatBtn.addEventListener('click', function() {
+                aiChatModal.classList.add('hidden');
+            });
+            aiChatModal.addEventListener('click', function(e) {
+                if (e.target === aiChatModal) {
+                    aiChatModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script id="navigationScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('nav:last-child button');
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('text-primary');
+                        btn.classList.add('text-gray-400');
+                        const icon = btn.querySelector('i');
+                        if (icon.classList.contains('ri-dashboard-fill')) {
+                            icon.classList.replace('ri-dashboard-fill', 'ri-dashboard-line');
+                        }
+                    });
+                    this.classList.remove('text-gray-400');
+                    this.classList.add('text-primary');
+                    const activeIcon = this.querySelector('i');
+                    if (activeIcon.classList.contains('ri-dashboard-line')) {
+                        activeIcon.classList.replace('ri-dashboard-line', 'ri-dashboard-fill');
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="quickActionsScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const quickActionButtons = document.querySelectorAll('main > div:nth-child(3) button');
+            quickActionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const actionName = this.querySelector('span').textContent;
+                    console.log('Action rapide cliquée:', actionName);
+                });
+            });
+        });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html> 
